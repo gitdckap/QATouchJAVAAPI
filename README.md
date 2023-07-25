@@ -1,4 +1,9 @@
-# QA Touch API
+## How to Sync Selenium TestNG Test Results with QA Touch API?
+
+You can sync your SeleniumTestNG test automation test result in QA Touch directly with the API endpoints. 
+
+​​
+##	QA Touch API
 
 QA Touch is a Collaborative Test Case Management tool For Modern QA Teams
 
@@ -22,7 +27,7 @@ Required Headers
 domain
 api-token
 
-## config.php
+## Variables
 
 $domain = '*****';              
 		// Your Domain name
@@ -33,6 +38,19 @@ $apiToken = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
 		(Go to User->Edit profile Under General settings, Click 'Generate API Key')
 
 $url    = 'https://api.qatouch.com/api/v1/';                // QA Touch API URL
+
+
+## Selenium Test Result Sync:
+Setup and configure the values API token, domain, project,test_run, and run_result like the sample files.
+There are two files available. They are:
+1. AddResultNew.java 
+2. GoogleTest.java
+
+File path : (QATouchJAVAAPI/src/main/java/com/qatouch/apitestsync)
+
+In this file, AddResultNew.java, configure the values for API Token, domain. 
+This file, GoogleTest.java, is a Selenium TestNG sample test file. Configure and pass the values for project, test_run, and run_result in the function addResultForTestCase.
+
 
 
 
