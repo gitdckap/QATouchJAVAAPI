@@ -2,6 +2,9 @@
 
 You can sync your SeleniumTestNG test automation test result in QA Touch directly with the API endpoints. 
 
+
+	 git clone git@github.com:gitdckap/QATouchJAVAAPI.git
+
 ​​
 ##	QA Touch API
 
