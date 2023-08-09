@@ -8,6 +8,7 @@ import org.testng.ITestResult;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import org.testng.annotations.AfterMethod;
 import org.openqa.selenium.By;
@@ -18,13 +19,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class GoogleTest {
 	public static WebDriver driver;
-	public String projectKey="****projectKey*******";
-	public String testrunid = "****testrunid*******";
+	public String projectKey="mr4V";
+	public String testrunid = "KQen";
 	public String resultKey;
 	public String newstatus = "passed";
 	public String failstatus = "failed";
+	public String newcomments="Updated from QA Touch API";
 	
-	@BeforeMethod
+	@BeforeSuite
 	public void openBrowser()
 	{
  
@@ -39,9 +41,18 @@ public class GoogleTest {
 	resultKey = "DbK9WZ";
        boolean flag = driver.findElement(By.name("q")).isDisplayed();
         Assert.assertTrue(flag);
-           }
-    
-	@AfterTest
+	}
+	
+    @Test    
+	public void titleTest() {
+    	resultKey = "vwkZPw";
+    		driver.get("https://www.google.com/");
+            String title = driver.getTitle();
+            System.out.println("page title:" + title);
+            AssertJUnit.assertEquals(title, "Googlet");
+        }
+	     
+    @AfterTest
     public void tearDown() {
         driver.quit();
     }
@@ -55,11 +66,12 @@ public class GoogleTest {
 	   System.out.println(result);
 	   if (result.isSuccess()) {
 		   System.out.println("Success");
-		   obj.addTestRunStatus(null,testrunid,projectKey,resultKey,newstatus);
+		   obj.addTestRunStatus(null,testrunid,projectKey,resultKey,newstatus,newcomments);
 	       }
    		else  {
-   		 obj.addTestRunStatus(null,testrunid,projectKey,resultKey,failstatus);
+   		 obj.addTestRunStatus(null,testrunid,projectKey,resultKey,failstatus,newcomments);
 	   
       }
     }  
 }
+	

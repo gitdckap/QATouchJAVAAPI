@@ -9,9 +9,11 @@ import java.net.URL;
 
 public class AddResultNew {
 	
-	public static String QA_TOUCH_APITOKEN = "****APIToken*******";
+	public static String QA_TOUCH_APITOKEN = "6b68c52cfbbc3a39d8aa11c5e2070f04d628bc60819f0e636177fdcc4f699231";
 	public static String QA_TOUCH_URL = "https://api.qatouch.com/api/v1";
-	public static String QA_TOUCH_DOMAIN = "*****Domain****";
+	public static String QA_TOUCH_DOMAIN = "malar";
+	public static String QA_TOUCH_COMMENTS = "Added from API";
+	
 	static String status;
 
 
@@ -22,12 +24,12 @@ public class AddResultNew {
         }
     //Add Test Run Status
     
-    public static void addTestRunStatus(String[] args, String test_run, String project, String run_result,String newstatus) { 
+    public static void addTestRunStatus(String[] args, String test_run, String project, String run_result,String newstatus, String newcomments) { 
     	
     
     	       String url = "https://api.qatouch.com/api/v1/";
-    
-    	       String addresulturl =url + "testRunResults/status?" + "status=" + newstatus + "&" + "project=" + project + "&" + "test_run=" + test_run + "&" + "run_result=" + run_result;  
+ 
+    	       String addresulturl =url + "testRunResults/status?" + "status=" + newstatus + "&" + "project=" + project + "&" + "test_run=" + test_run + "&" + "run_result=" + run_result + "&" + "comments=" + newcomments;
     	       System.out.println("Add Result URL");
     	       System.out.println(addresulturl);		
     	       String addresult = addTestResults(QA_TOUCH_APITOKEN, QA_TOUCH_DOMAIN, addresulturl);
@@ -43,7 +45,9 @@ public class AddResultNew {
             connection.setRequestMethod("POST");
             connection.setRequestProperty("api-token", apiToken);
             connection.setRequestProperty("domain", domain);
-            connection.setRequestProperty("url", addresulturl); 
+            connection.setRequestProperty("comments",QA_TOUCH_COMMENTS);
+            connection.setRequestProperty("url", addresulturl);
+           
             int responseCode = connection.getResponseCode();
             
             if (responseCode == HttpURLConnection.HTTP_OK) {
