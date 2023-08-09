@@ -9,9 +9,9 @@ import java.net.URL;
 
 public class AddResultNew {
 	
-	public static String QA_TOUCH_APITOKEN = "6b68c52cfbbc3a39d8aa11c5e2070f04d628bc60819f0e636177fdcc4f699231";
+	public static String QA_TOUCH_APITOKEN = "***************API TOKEN****************";
 	public static String QA_TOUCH_URL = "https://api.qatouch.com/api/v1";
-	public static String QA_TOUCH_DOMAIN = "malar";
+	public static String QA_TOUCH_DOMAIN = "**************DOMAIN****************************";
 	public static String QA_TOUCH_COMMENTS = "Added from API";
 	
 	static String status;

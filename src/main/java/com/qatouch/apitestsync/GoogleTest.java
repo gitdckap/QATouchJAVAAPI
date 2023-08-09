@@ -19,8 +19,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class GoogleTest {
 	public static WebDriver driver;
-	public String projectKey="mr4V";
-	public String testrunid = "KQen";
+	public String projectKey="********projectKey***********";
+	public String testrunid = "*********TESTRUNID**********";
 	public String resultKey;
 	public String newstatus = "passed";
 	public String failstatus = "failed";
